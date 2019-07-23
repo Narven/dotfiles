@@ -10,12 +10,12 @@ if type nvim > /dev/null 2>&1; then
   alias vim='nvim'
 fi
 
-export N_PREFIX="/home/narven/.local/bin"
+export N_PREFIX="$HOME/.local/bin"
 export NPM_CONFIG_PREFIX="~/npm/bin"
 export ERL_AFLAGS="-kernel shell_history enabled"
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/narven/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 export VISUAL=nvim
 export EDITOR=$VISUAL
@@ -148,3 +148,4 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:/usr/bi
 #export PATH="$HOME/.rbenv/bin:$PATH"
 #eval "$(rbenv init -)"
 
+/usr/bin/setxkbmap -option "ctrl:nocaps"
