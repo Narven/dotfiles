@@ -72,8 +72,16 @@ snap install lsd
 
 * Install Typescript and Yarn in global NPM
 ```sh
-npm i typescript yarn -g
+npm i typescript yarn n -g
 ```
+* Install latest Node
+```sh
+n latest
+sudo snap remove node
+vim ~/.zshrc
+# add the path of the n installation bin
+```
+
 
 * Add this to the source.list to have the latest Erlang packages
 ```sh
