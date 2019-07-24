@@ -132,7 +132,7 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source ~/.bash_aliases
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:/usr/local/go/bin:$HOME/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0:$HOME/.gem/ruby/2.5.0:$HOME/npm/bin:/$HOME/npm/bin/bin:/opt/lampp/bin:$HOME/apps/webstorm/WebStorm-182.3911.37/bin:/home/linuxbrew/.linuxbrew/bin:$PATH"
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:/usr/local/go/bin:$HOME/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0:$HOME/.gem/ruby/2.5.0:$HOME/npm/bin:/$HOME/npm/bin/bin:/opt/lampp/bin:$HOME/apps/webstorm/WebStorm-182.3911.37/bin:/home/linuxbrew/.linuxbrew/bin:/home/narven/.local/bin/bin:$PATH"
 
 # when open any file on vim... opens in NORMAL MODE by default
 #bindkey -v
