@@ -121,6 +121,17 @@ fc-cache -f -v
 fc-list | grep "Hack" # just to check that is installed
 ```
 
+* Install Go (golang.org)
+```sh
+cd ~/Downloads
+wget https://dl.google.com/go/go1.12.7.linux-amd64.tar.gz
+sudo tar -C /usr/local -xzf go1.12.7.linux-amd64.tar.gz
+# Add `/usr/local/go/bin` to $PATH
+go version # to confirm
+```
+
+
+
 * Other stuff to install
 
 1. Spotify
