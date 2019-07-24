@@ -76,9 +76,9 @@ vim /usr/share/mdm/html-themes/Mint-X/slideshow.conf
 snap install lsd
 ```
 
-* Install Typescript and Yarn in global NPM
+* Install Typescript, Yarn, n, neovim in global NPM
 ```sh
-npm i typescript yarn n -g
+npm i typescript yarn n neovim -g
 ```
 * Install latest Node
 ```sh
@@ -146,6 +146,7 @@ sudo apt-get install ranger
 ssh-keygen -t rsa
 ```
 
+* Install NEOVIM
 ```sh
 cd ~/Downloads
 curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
@@ -154,6 +155,33 @@ sudo mv nvim.appimage /usr/bin/nvim
 # my vim alias is nvim
 ```
 
+** Install NEOVIM dependencies
+```sh
+sudo apt-get install python-neovim
+```
+
+** Update All Plugins
+Inside NEOVIM run `PlugUpgrade` and `PlugInstall` or `PlugUpdate`
+
+* Install Java
+```sh
+sudo apt-get install default-jre
+sudo apt-get install default-jdk
+```
+* Install NoSQLBooster
+```sh
+cd ~/Downloads
+wget https://nosqlbooster.com/s3/download/releasesv5/nosqlbooster4mongo-5.1.12.AppImage
+sudo mv nosqlbooster4mongo-5.1.12.AppImage /usr/bin/nosqlbooster
+```
+
+* Install Terraform
+```sh
+cd ~/Downloads
+wget https://releases.hashicorp.com/terraform/0.12.5/terraform_0.12.5_linux_amd64.zip
+unzip terraform_0.12.5_linux_amd64.zip
+sudo mv terraform /usr/local/bin
+```
 
 * Other stuff to install
 
@@ -161,3 +189,8 @@ sudo mv nvim.appimage /usr/bin/nvim
 2. Steam
 3. Telegram
 4. Whatsapp
+
+
+* Other base configurations (Mint)
+1. G to Keyboard Preferences and Options and change configuration on the CAPS
+   LOCK key to also be `Caps Lock is also a Ctrl`

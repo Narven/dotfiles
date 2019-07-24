@@ -23,7 +23,7 @@ alias brewup='brew update; brew upgrade; brew prune; brew cleanup; brew doctor'
 alias dcu="docker-compose up -d"
 alias dcd="docker-compose down"
 alias open="xdg-open"
-alias python=python3
+#alias python=python3
 #alias vim=nvim
 alias nvime="vim ~/.config/nvim/init.vim"
 
