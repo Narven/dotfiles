@@ -1,21 +1,14 @@
 alias cls="clear"
 #alias ls="ls -laF"
-#alias ll="ls -lah"
+alias ls="ls -lah"
 #alias ls="lsd -lahF"
 # Save me from myself (needs `sudo apt-get install trash-cli`)
 #alias rm="trash"
 
-#alias docker="sudo docker"
-alias dangling="docker rmi -f $(docker images -f 'dangling=true' -q)"
-alias gp="git pull"
 alias gs="git status"
-alias gc="git commit"
-alias gcm="git commit -m"
 alias proj="cd ~/Projects"
-alias pull="git pull"
-alias push="git push"
 alias tns="tmux new-session -s"
-alias connido="cd ~/projects/connido"
+alias connido="cd ~/Projects/connido"
 alias ct="ctags -R -f ./.git/tags --exclude=node_modules --exclude=bower_components --exclude=dist --exclude=build"
 alias mkdir='mkdir -p'
 alias du='du -h'
@@ -32,4 +25,5 @@ alias dcd="docker-compose down"
 alias open="xdg-open"
 alias python=python3
 #alias vim=nvim
-alias nvime="nvim ~/.config/nvim/init.vim"
+alias nvime="vim ~/.config/nvim/init.vim"
+

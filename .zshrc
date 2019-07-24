@@ -10,19 +10,15 @@ if type nvim > /dev/null 2>&1; then
   alias vim='nvim'
 fi
 
-export N_PREFIX="$HOME/.local/bin"
+export N_PREFIX="/home/narven/.local/bin"
 export NPM_CONFIG_PREFIX="~/npm/bin"
 export ERL_AFLAGS="-kernel shell_history enabled"
 
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+export ZSH="/home/narven/.oh-my-zsh"
 
-export VISUAL=nvim
+export VISUAL=vim
 export EDITOR=$VISUAL
-
-if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-  source /etc/profile.d/vte.sh
-fi
 
 # use emacs keybindings on the command line
 bindkey -e
@@ -136,16 +132,9 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source ~/.bash_aliases
 
-#export DOCKER_HOST=127.0.0.1:2375
-
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:/usr/bin/go/bin:$HOME/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0:$HOME/.gem/ruby/2.5.0:$HOME/npm/bin:/$HOME/npm/bin/bin:/opt/lampp/bin:$HOME/apps/webstorm/WebStorm-182.3911.37/bin:/home/linuxbrew/.linuxbrew/bin:/var/lib/snapd/snap/bin:$PATH"
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:/usr/local/go/bin:$HOME/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0:$HOME/.gem/ruby/2.5.0:$HOME/npm/bin:/$HOME/npm/bin/bin:/opt/lampp/bin:$HOME/apps/webstorm/WebStorm-182.3911.37/bin:/home/linuxbrew/.linuxbrew/bin:$PATH"
 
 # when open any file on vim... opens in NORMAL MODE by default
 #bindkey -v
 
 # neofetch
-
-#export PATH="$HOME/.rbenv/bin:$PATH"
-#eval "$(rbenv init -)"
-
-/usr/bin/setxkbmap -option "ctrl:nocaps"
