@@ -12,6 +12,12 @@ sudo apt-get install curl python-software-properties
 snap install --edge node --classic
 ```
 
+* Install OH MY ZSH
+```sh
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+```
+
+
 * Get my dotfiles
 ```sh
 git clone git@github.com:Narven/dotfiles.git
