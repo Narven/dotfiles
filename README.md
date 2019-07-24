@@ -136,6 +136,23 @@ sudo tar -C /usr/local -xzf go1.12.7.linux-amd64.tar.gz
 go version # to confirm
 ```
 
+* Install Ranger
+```sh
+sudo apt-get install ranger
+```
+
+* Generate RSA Keys if needed
+```sh
+ssh-keygen -t rsa
+```
+
+```sh
+cd ~/Downloads
+curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
+chmod u+x nvim.appimage
+sudo mv nvim.appimage /usr/bin/nvim
+# my vim alias is nvim
+```
 
 
 * Other stuff to install
