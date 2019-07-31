@@ -27,3 +27,4 @@ alias open="xdg-open"
 #alias vim=nvim
 alias nvime="vim ~/.config/nvim/init.vim"
 
+alias lsa="exa --long --header --git"

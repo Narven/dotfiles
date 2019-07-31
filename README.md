@@ -148,16 +148,17 @@ ssh-keygen -t rsa
 
 * Install NEOVIM
 ```sh
-cd ~/Downloads
-curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
-chmod u+x nvim.appimage
-sudo mv nvim.appimage /usr/bin/nvim
-# my vim alias is nvim
+sudo apt-get install software-properties-common
+sudo add-apt-repository ppa:neovim-ppa/stable
+sudo apt-get update
+sudo apt-get install neovim
+sudo apt-get install python-dev python-pip python3-dev python3-pip
 ```
 
 ** Install NEOVIM dependencies
 ```sh
-sudo apt-get install python-neovim
+sudo apt-get install python-neovim python-setuptools
+
 ```
 
 ** Update All Plugins
@@ -183,7 +184,21 @@ unzip terraform_0.12.5_linux_amd64.zip
 sudo mv terraform /usr/local/bin
 ```
 
-* Other stuff to install
+* Install PIP
+```sh
+sudo apt-get install python3-pip
+cd ~/Downloads
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python get-pip.py --user
+```
+
+* Install Python NEOVIM
+```sh
+pip2 install --upgrade --force-reinstall neovim --user
+```
+
+
+* Install other stuff to install
 
 1. Spotify
 2. Steam
@@ -194,3 +209,5 @@ sudo mv terraform /usr/local/bin
 * Other base configurations (Mint)
 1. G to Keyboard Preferences and Options and change configuration on the CAPS
    LOCK key to also be `Caps Lock is also a Ctrl`
+snap install aws-cli --classic
+sudo apt install xclip
