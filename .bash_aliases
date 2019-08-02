@@ -1,6 +1,6 @@
 alias cls="clear"
 #alias ls="ls -laF"
-alias ls="ls -lah"
+#alias ls="ls -lah"
 #alias ls="lsd -lahF"
 # Save me from myself (needs `sudo apt-get install trash-cli`)
 #alias rm="trash"
@@ -27,4 +27,4 @@ alias open="xdg-open"
 #alias vim=nvim
 alias nvime="vim ~/.config/nvim/init.vim"
 
-alias lsa="exa --long --header --git"
+alias ls="exa --long --header --git"
