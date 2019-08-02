@@ -107,3 +107,9 @@
 (use-package emmet-mode
   :ensure t
   :hook (sgml-mode css-mode web-mode))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Terraform
+;; Managing/Orquestrating Infrastructure
+(use-package terraform-mode
+  :ensure t
+  :init (setq terraform-indent-level 2))
