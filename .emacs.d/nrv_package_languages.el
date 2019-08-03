@@ -67,6 +67,9 @@
 (use-package elixir-mix
   :ensure t)
 
+(use-package elixir-mode
+  :ensure t)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;; Gettext (PO Files)
 
 (use-package po-mode
