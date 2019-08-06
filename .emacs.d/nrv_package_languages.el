@@ -64,10 +64,8 @@
   :custom (css-indent-offset 2))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;; Elixir
-(use-package elixir-mix
-  :ensure t)
 
-(use-package elixir-mode
+(use-package alchemist
   :ensure t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;; Gettext (PO Files)

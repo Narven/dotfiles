@@ -21,7 +21,8 @@
 (require 'cl-lib)
 (require 'package)
 
-(setq package-archives '(("melpa-stable" . "http://stable.melpa.org/packages/")
+(setq package-archives '(("melpa" . "http://melpa.org/packages/")
+			 ("melpa-stable" . "http://stable.melpa.org/packages/")
 			 ("org" . "https://orgmode.org/elpa/")
 			 ("gnu" . "http://elpa.gnu.org/packages/")
 			 ("marmalade" . "https://marmalade-repo.org/packages/")
@@ -83,7 +84,7 @@
  '(org-mu4e-convert-to-html t t)
  '(package-selected-packages
    (quote
-    (elixir-mode terraform-mode yasnippet-snippets yarn-mode yaml-mode xref-js2 wttrin which-key webpaste web-mode vue-mode use-package undo-tree try tldr tide switch-window swiper sql-indent smooth-scrolling smartparens smart-mode-line shell-pop sass-mode rainbow-mode rainbow-delimiters python-mode prettier-js powerline po-mode plantuml-mode paradox origami org-plus-contrib org-bullets ob-restclient nimbus-theme multi-term move-text markdown-mode magit lorem-ipsum json-mode js2-refactor imgbb hungry-delete highlight-current-line helm-projectile helm-gitignore git-timemachine git-gutter general eyebrowse expand-region eww-lnum emmet-mode elixir-mix editorconfig dockerfile-mode deft csv-mode company beacon auto-complete alert aggressive-indent ace-window))))
+    (nord-theme dired-x dired-ranger dired alchemist elixir-mode terraform-mode yasnippet-snippets yarn-mode yaml-mode xref-js2 wttrin which-key webpaste web-mode vue-mode use-package undo-tree try tldr tide switch-window swiper sql-indent smooth-scrolling smartparens smart-mode-line shell-pop sass-mode rainbow-mode rainbow-delimiters python-mode prettier-js powerline po-mode plantuml-mode paradox origami org-plus-contrib org-bullets ob-restclient nimbus-theme multi-term move-text markdown-mode magit lorem-ipsum json-mode js2-refactor imgbb hungry-delete highlight-current-line helm-projectile helm-gitignore git-timemachine git-gutter general eyebrowse expand-region eww-lnum emmet-mode elixir-mix editorconfig dockerfile-mode deft csv-mode company beacon auto-complete alert aggressive-indent ace-window))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

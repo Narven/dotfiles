@@ -14,19 +14,9 @@
   (dired-ls-F-marks-symlinks nil))
 
 (use-package dired-ranger
+  :ensure t
   :commands (dired-ranger-copy dired-ranger-paste dired-ranger-move)
-  :init
-  (add-hook 'dired-mode-hook
-	    (lambda()
-	      (define-key dired-mode-map (kbd "M-w") 'dired-ranger-copy)
-	      (define-key dired-mode-map (kbd "C-y") 'dired-ranger-paste)
-	      (define-key dired-mode-map (kbd "C-c C-y") 'dired-ranger-move))))
-
-;;     (use-package dired-x
-;;     :ensure t
-;;       :requires dired
-;;       :after dired
-;;       :preface
-;;       (defun my/dired-revert-after-cmd (command &optional output error)
-;;	 (revert-buffer))
-;;       :config (advice-add 'dired-smart-shell-command :after #'my/dired-revert-after-cmd))
+  :bind (:map dired-mode-map
+	      ("W" . dired-ranger-copy)
+	      ("X" . dired-ranger-move)
+	      ("Y" . dired-ranger-paste)))

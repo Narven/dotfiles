@@ -6,15 +6,30 @@
   :hook (prog-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Theme
-(use-package nimbus-theme
+;;(use-package nimbus-theme
+;;  :ensure t
+;;  :init (load-theme 'nimbus))
+
+(use-package nord-theme
   :ensure t
-  :init (load-theme 'nimbus))
+  ;;  :config
+  ;;  (set-face-attribute 'mode-line nil
+  ;;  :foreground "Black"
+  ;;:background "DarkOrange"
+  ;;  :box nil)
+  :init (load-theme 'nord))
 
 (set-face-attribute 'default nil
-		    :family "Source Code Pro"
-		    :height 130
+		    :family "Hack"
+		    :height 120
 		    :weight 'normal
 		    :width 'normal)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Powerline
+(use-package powerline
+  :ensure t
+  :config
+  (powerline-default-theme))
 
 (use-package smart-mode-line
   :ensure t

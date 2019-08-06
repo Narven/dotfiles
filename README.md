@@ -4,7 +4,7 @@
 
 * Basic packages:
 ```bash
-sudo apt-get install curl python-software-properties
+sudo apt-get install curl python-software-properties build-essential
 ```
 
 * Install NodeJS via Snap
@@ -99,7 +99,7 @@ wget https://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc
 sudo apt-key add erlang_solutions.asc
 
 sudo apt-get update
-sudo apt-get install erlang
+sudo apt-get install erlang erlang-dev
 ```
 
 * Install Mix packages and Phoenix Framework (cached version)
