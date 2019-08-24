@@ -2,13 +2,15 @@
 autoload -U colors
 colors
 
+[[ $TMUX = "" ]] && export TERM="xterm-256color"
+
 # History
 #setopt hist_ignore_all_dups inc_append_history
 
 # maps vim to nvim
-if type nvim > /dev/null 2>&1; then
-  alias vim='nvim'
-fi
+#if type nvim > /dev/null 2>&1; then
+#  alias vim='nvim'
+#fi
 
 export N_PREFIX="/home/narven/.local/bin"
 export NPM_CONFIG_PREFIX="~/npm/bin"
@@ -25,9 +27,11 @@ bindkey -e
 
 bindkey -v
 
+export _JAVA_OPTIONS=-Xmx1048m
+
 #ZSH_THEME="robbyrussell"
 ZSH_THEME="lambda-gitster"
-
+#ZSH_THEME="powerlevel9k/powerlevel9k"
 # load custom executable functions
 # for function in ~/.zsh/functions/*; do
 #  source $function
@@ -90,6 +94,7 @@ compinit
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+aws
 git
 node
 npm
@@ -131,11 +136,17 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source ~/.bash_aliases
+export GOPATH=$HOME/go
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:/usr/local/go/bin:$HOME/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0:$HOME/.gem/ruby/2.5.0:$HOME/npm/bin:/$HOME/npm/bin/bin:/opt/lampp/bin:$HOME/apps/webstorm/WebStorm-182.3911.37/bin:/home/linuxbrew/.linuxbrew/bin:/home/narven/.local/bin/bin:$PATH"
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:/usr/local/go/bin:$HOME/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0:$HOME/.gem/ruby/2.5.0:$HOME/npm/bin:/$HOME/npm/bin/bin:/opt/lampp/bin:$HOME/apps/webstorm/WebStorm-182.3911.37/bin:/home/linuxbrew/.linuxbrew/bin:/home/narven/.local/bin/bin:$GOPATH/bin:$PATH"
 
 # when open any file on vim... opens in NORMAL MODE by default
 #bindkey -v
 
+#source ~/.bin/tmuxinator.zsh
+
+tmux start-server
 # neofetch
 #export MINICOM="-m -c on"
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
