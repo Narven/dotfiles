@@ -114,3 +114,12 @@
 (use-package terraform-mode
   :ensure t
   :init (setq terraform-indent-level 2))
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Elm
+(use-package elm-mode
+  :ensure t)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Go
+(use-package go-mode
+  :ensure t)
