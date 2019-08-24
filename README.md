@@ -4,7 +4,7 @@
 
 * Basic packages:
 ```bash
-sudo apt-get install curl python-software-properties build-essential
+sudo apt-get install curl python-software-properties build-essential tree
 ```
 
 * Install NodeJS via Snap
