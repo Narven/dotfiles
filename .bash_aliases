@@ -1,5 +1,5 @@
 alias cls="clear"
-#alias ls="ls -lahF"
+alias ls="ls -lahF"
 #alias ls="ls -lah"
 #alias ls="lsd -lahF"
 # Save me from myself (needs `sudo apt-get install trash-cli`)
@@ -17,7 +17,7 @@ alias zshreload="source ~/.zshrc"
 alias tls="tmux ls"
 alias tat="tmux attach -t"
 alias tks="tmux kill-session -t"
-alias r='ranger --choosedir=$HOME/rangerdir; LASTDIR=`cat $HOME/rangerdir`; cd "$LASTDIR"'
+alias rg='ranger --choosedir=$HOME/rangerdir; LASTDIR=`cat $HOME/rangerdir`; cd "$LASTDIR"'
 alias brewup='brew update; brew upgrade; brew prune; brew cleanup; brew doctor'
 
 alias dcu="docker-compose up -d"
@@ -30,8 +30,11 @@ alias gh='history|grep'
 alias left='ls -t -l'
 alias please='sudo'
 alias sudi='sudo !!'
-alias ls="exa --long --header --git"
+alias l="exa --long --header --git"
 alias mux="tmuxinator"
 alias gocode="cd ~/go/src/github.com/narven"
-alias gr="go run"
-alias gb="go build"
+alias grm="go run ."
+alias gb.="go build ."
+alias lp="tmux start-server && tmuxinator start Personal"
+alias gobuff="cd ~/Projects/buffup"
+alias kb="kubectl"

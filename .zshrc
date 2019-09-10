@@ -22,6 +22,8 @@ export ZSH="/home/narven/.oh-my-zsh"
 export VISUAL=vim
 export EDITOR=$VISUAL
 
+#export KAKOUNE_POSIX_SHELL=dash
+
 # use emacs keybindings on the command line
 bindkey -e
 
@@ -103,7 +105,10 @@ docker
 docker-compose
 httpie
 timer
+tmuxinator
+terraform
 )
+
 
 source $ZSH/oh-my-zsh.sh
 

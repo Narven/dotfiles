@@ -6,6 +6,8 @@
   :mode "\\.yml\\'"
   :interpreter ("yml" . yml-mode))
 
+(add-to-list 'auto-mode-alist '("\\Supfile*\\'" . yaml-mode))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;; SASS
 (use-package sass-mode
   :ensure t)
@@ -122,4 +124,11 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Go
 (use-package go-mode
-  :ensure t)
+  :ensure t
+  :init(
+	autoload 'go-mode "go-mode" nil t
+		 )
+  :config
+  (progn
+    (add-to-list 'auto-mode-alist '("\\.go\\'" . go-mode)))
+  )

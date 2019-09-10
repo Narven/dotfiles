@@ -6,24 +6,34 @@
   :hook (prog-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Theme
-;;(use-package nimbus-theme
-;;  :ensure t
-;;  :init (load-theme 'nimbus))
-
-(use-package nord-theme
+;; doom-one, doom-vibrant, doom-dracula, doom-city-lights, doom-gruvbox
+;; doom-molokai, doom-nord, doom-spacegrey
+(use-package doom-themes
   :ensure t
-  ;;  :config
-  ;;  (set-face-attribute 'mode-line nil
-  ;;  :foreground "Black"
-  ;;:background "DarkOrange"
-  ;;  :box nil)
-  :init (load-theme 'nord))
+  :init (load-theme 'doom-one))
+
+;;(use-package nord-theme
+;;  :ensure t
+;;  :config
+;;  (set-face-attribute 'mode-line nil
+;;  :foreground "Black"
+;;:background "DarkOrange"
+;;  :box nil)
+;;  :init (load-theme 'nord))
+
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 
 (set-face-attribute 'default nil
 		    :family "Hack"
 		    :height 120
 		    :weight 'normal
 		    :width 'normal)
+
+;; Define some margins to the main window
+(set-window-margins (selected-window) 2 2)
+(setq-default left-fringe-width 5)
+(setq-default right-fringe-width 0)
+;;(set-face-attribute 'fringe nil :background "DarkOrange")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Powerline
 (use-package powerline
@@ -95,3 +105,7 @@
   (highlight-current-line-high-faces nil)
   (highlight-current-line-whole-line nil)
   (h-line-face (quote highlight)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;; NeoTree
+(use-package neotree
+  :ensure t)

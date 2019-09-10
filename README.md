@@ -197,6 +197,11 @@ python get-pip.py --user
 pip2 install --upgrade --force-reinstall neovim --user
 ```
 
+* Install Ranger
+```sh
+sudo apt-get install ranger && ranger --copy-config=all
+```
+> Configuration will be available at ~/.config/ranger
 
 * Install other stuff to install
 
