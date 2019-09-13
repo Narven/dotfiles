@@ -30,7 +30,7 @@ alias gh='history|grep'
 alias left='ls -t -l'
 alias please='sudo'
 alias sudi='sudo !!'
-alias l="exa --long --header --git"
+alias ll="exa -G -l -F --all -h --git --color-scale --sort=ext --extended"
 alias mux="tmuxinator"
 alias gocode="cd ~/go/src/github.com/narven"
 alias grm="go run ."
@@ -38,3 +38,4 @@ alias gb.="go build ."
 alias lp="tmux start-server && tmuxinator start Personal"
 alias gobuff="cd ~/Projects/buffup"
 alias kb="kubectl"
+alias fontcache="fc-cache -f -v"

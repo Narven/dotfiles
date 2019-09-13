@@ -216,3 +216,5 @@ sudo apt-get install ranger && ranger --copy-config=all
    LOCK key to also be `Caps Lock is also a Ctrl`
 snap install aws-cli --classic
 sudo apt install xclip
+sudo snap install simplenote
+npm install -g firebase-tools
