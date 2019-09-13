@@ -156,7 +156,10 @@
 ;; set default browser
 ;; (setq browse-url-browser-function 'browse-url-default-macosx-browser)
 
-;; UI
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;UI;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (gsetq initial-frame-alist '((fullscreen . fullboth))
        custom-safe-themes t
        frame-inhibit-implied-resXize t
@@ -352,6 +355,14 @@
 (bind-key "C-z" nil)
 
 
+;;;;;;;;;;;;;;
+;; Windsize ;;
+;;;;;;;;;;;;;;
+(use-package windsize
+  :ensure t
+  :init
+  (windsize-default-keybindings))
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Projectile
 ;;; Manage projects
@@ -359,7 +370,8 @@
 (use-package projectile
   :ensure t
   :defer t
-  :bind (("M-P" . projectile-switch-open-project)
+  :bind (
+	 ("M-P" . projectile-switch-open-project)
 	 ("M-p" . projectile-switch-project))
   :config
   (helm-projectile-on)
@@ -515,6 +527,9 @@
 (use-package dired
   :ensure nil
   :delight dired-mode "Dired"
+  :init
+  (add-hook 'dired-load-hook
+	    (function (lambda() (load "dired-x"))))
   :custom
   (dired-dwim-target t)
   (dired-hide-details-hide-symlink-targets nil)
@@ -531,8 +546,6 @@
 	      ("W" . dired-ranger-copy)
 	      ("X" . dired-ranger-move)
 	      ("Y" . dired-ranger-paste)))
-
-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Magit
 ;;;  GIT manager
@@ -839,7 +852,10 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;; PlantUML
 (use-package plantuml-mode
-  :ensure t)
+  :ensure t
+  :commands plantuml-mode
+  :init
+  (add-to-list 'auto-mode-alist '("\\.pu$" . plantuml-mode)))
 
 ;;;;;;;;;;;;;;;;;;;; YARN
 (use-package yarn-mode
@@ -1318,3 +1334,30 @@
   :config
   (unless (server-running-p)
     (server-start)))
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(dired-auto-revert-buffer t)
+ '(dired-dwim-target t)
+ '(dired-hide-details-hide-symlink-targets nil)
+ '(dired-listing-switches "-alh")
+ '(dired-ls-F-marks-symlinks nil)
+ '(dired-recursive-copies (quote always))
+ '(dired-recursive-deletes (quote always))
+ '(git-gutter:handled-backends (quote (git hg bzr svn)))
+ '(git-gutter:window-width 4)
+ '(magit-completing-read-function (quote ivy-completing-read) t)
+ '(magit-diff-refine-hunk (quote all) t)
+ '(org-contacts-files (quote ("~/Dropbox/Notes/contacts/contacts.org")) t)
+ '(org-mu4e-convert-to-html t t)
+ '(package-selected-packages
+   (quote
+    (dired-x windsize yasnippet-snippets yarn-mode yaml-mode xref-js2 wttrin which-key webpaste web-mode vue-mode use-package undo-tree try tldr tide terraform-mode switch-window swiper sql-indent smooth-scrolling smartparens smart-mode-line shell-pop sass-mode rainbow-mode rainbow-delimiters python-mode prettier-js powerline po-mode plantuml-mode paradox origami org-plus-contrib org-bullets ob-typescript ob-tmux ob-sql-mode ob-rust ob-restclient ob-mongo ob-http ob-go ob-elixir ob-browser nord-theme nimbus-theme neotree multi-term move-text markdown-mode magit lorem-ipsum json-mode js2-refactor imgbb hungry-delete highlight-current-line helm-projectile helm-gitignore go-mode git-timemachine git-gutter general eyebrowse expand-region eww-lnum emmet-mode elm-mode elixir-mix editorconfig doom-themes dockerfile-mode dired-ranger deft csv-mode beacon auto-complete all-the-icons alert alchemist aggressive-indent ace-window))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(aw-leading-char-face ((t (:inherit ace-jump-face-foreground :height 2.0)))))
