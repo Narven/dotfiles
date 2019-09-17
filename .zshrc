@@ -107,6 +107,7 @@ httpie
 timer
 tmuxinator
 terraform
+vagrant
 )
 
 
