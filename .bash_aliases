@@ -30,7 +30,7 @@ alias gh='history|grep'
 alias left='ls -t -l'
 alias please='sudo'
 alias sudi='sudo !!'
-alias ll="exa -G -l -F --all -h --git --color-scale --sort=ext --extended"
+alias ll="exa -l -F --all -h --git --color-scale --sort=ext --extended"
 alias mux="tmuxinator"
 alias gocode="cd ~/go/src/github.com/narven"
 alias grm="go run ."
@@ -43,3 +43,4 @@ alias fontcache="fc-cache -f -v"
 alias vdvu="vagrant halt & vagrant destroy -f & vagrant up"
 alias vu="vagrant up"
 alias vd="vagrant destroy"
+alias dang='docker rmi -f $(docker images -f "dangling=true" -q)'

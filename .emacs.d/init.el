@@ -1,7 +1,3 @@
-;;; package --- Summary
-;;; Code:
-;;; Commentary:
-
 (defun nrv-get-fullpath (@file-relative-path)
   "http://ergoemacs.org/emacs/organize_your_dot_emacs.html"
   (concat (file-name-directory (or load-file-name buffer-file-name)) @file-relative-path))
@@ -21,10 +17,10 @@
 (require 'cl-lib)
 (require 'package)
 
-(setq package-archives '(("melpa" . "http://melpa.org/packages/")
-			 ("melpa-stable" . "http://stable.melpa.org/packages/")
+(setq package-archives '(("melpa" . "https://melpa.org/packages/")
+			 ("melpa-stable" . "https://stable.melpa.org/packages/")
 			 ("org" . "https://orgmode.org/elpa/")
-			 ("gnu" . "http://elpa.gnu.org/packages/")
+			 ("gnu" . "https://elpa.gnu.org/packages/")
 			 ("marmalade" . "https://marmalade-repo.org/packages/")
 			 ))
 
@@ -375,26 +371,24 @@
 	 ("M-p" . projectile-switch-project))
   :config
   (helm-projectile-on)
-  :init
-  (setq projectile-completion-system 'helm)
-  (setq projectile-require-project-root nil)
-  (setq projectile-switch-project-action 'helm-projectile-find-file)
-  (setq projectile-enable-caching nil)
-  (setq projectile-project-search-path '("~/.emacs.d" "~/Projects/narven" "~/Projects/connido" "~/Projects/eunice" "~/Projects/other" "~/Projects/narventek")
-  (setq projectile-globally-ignored-directories (append '(
-							  ".git"
-							  ".svn"
-							  "node_modules"
-							  )))
-  (setq projectile-globally-ignored-files (append '(
-						    ".DS_Store"
-						    "*.gz"
-						    "*.pyc"
-						    "*.jar")))
-  :init
-  (projectile-global-mode)
-  )
+   (progn
+    (setq projectile-completion-system 'helm
+	  projectile-require-project-root nil
+	  projectile-switch-project-action 'helm-projectile-find-file
+	  projectile-enable-caching nil)
 
+    (setq projectile-project-search-path '("~/.emacs.d" "~/Projects/narven" "~/Projects/connido" "~/Projects/eunice" "~/Projects/other" "~/Projects/narventek"))
+    (setq projectile-globally-ignored-directories (append '(
+							    ".git"
+							    ".svn"
+							    "node_modules"
+							    )))
+    (setq projectile-globally-ignored-files (append '(
+						      ".DS_Store"
+						      "*.gz"
+						      "*.pyc"
+						      "*.jar")))
+    ))
 
 
 
@@ -559,8 +553,8 @@
     (setq magit-push-current-set-remote-if-missing nil)
     (define-key magit-mode-map (kbd "<tab>") 'magit-section-toggle))
   :custom
-  (magit-completing-read-function #'ivy-completing-read)
-  (magit-diff-refine-hunk 'all))
+  (magit-completing-read-function (quote ivy-completing-read) t)
+  (magit-diff-refine-hunk (quote all) t))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Git Gutter
@@ -621,7 +615,7 @@
 
 (set-face-attribute 'default nil
 		    :family "mononoki"
-		    :height 135
+		    :height 130
 		    :weight 'normal
 		    :width 'normal)
 
@@ -969,22 +963,22 @@
 	      ("M-K" . helm-next-page)
 	      ("M-h" . helm-beginning-of-buffer)
 	      ("M-H" . helm-end-of-buffer))
-  :init
-  (setq helm-quick-update t) ;; do not display invisible candidates
-  (setq helm-M-x-requires-pattern nil)
-  (setq helm-ff-skip:-boring-files t)
-  (setq helm-apropos-fuzzy-match t)
-  (setq helm-autoresize-mode t)
-  (setq helm-buffers-fuzzy-matching t)
-  (setq helm-candidate-number-list 150)
-  (setq helm-mode-fuzzy-match t)
-  (setq helm-buffers-fuzzy-matching t)
-  (setq helm-autoresize-max-height 0)
-  (setq helm-autoresize-min-height 20)
-  ;; rebind tab to run persistent action
-  (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
-  (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
-  (helm-mode 1))
+:config (progn
+	    (setq helm-quick-update t) ;; do not display invisible candidates
+	    (setq helm-M-x-requires-pattern nil)
+	    (setq helm-ff-skip:-boring-files t)
+	    (setq helm-apropos-fuzzy-match t)
+	    (setq helm-autoresize-mode t)
+	    (setq helm-buffers-fuzzy-matching t)
+	    (setq helm-candidate-number-list 150)
+	    (setq helm-mode-fuzzy-match t)
+	    (setq helm-buffers-fuzzy-matching t)
+	    (setq helm-autoresize-max-height 0)
+	    (setq helm-autoresize-min-height 20)
+	    ;; rebind tab to run persistent action
+	    (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
+	    (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
+	    (helm-mode 1)))
 
 (use-package helm-gitignore
   :ensure t
@@ -1355,13 +1349,11 @@
  '(dired-recursive-deletes (quote always))
  '(git-gutter:handled-backends (quote (git hg bzr svn)))
  '(git-gutter:window-width 4)
- '(magit-completing-read-function (quote ivy-completing-read))
- '(magit-diff-refine-hunk (quote all))
  '(org-contacts-files (quote ("~/Dropbox/Notes/contacts/contacts.org")) t)
  '(org-mu4e-convert-to-html t t)
  '(package-selected-packages
    (quote
-    (robe dired-x windsize yasnippet-snippets yarn-mode yaml-mode xref-js2 wttrin which-key webpaste web-mode vue-mode use-package undo-tree try tldr tide terraform-mode switch-window swiper sql-indent smooth-scrolling smartparens smart-mode-line shell-pop sass-mode rainbow-mode rainbow-delimiters python-mode prettier-js powerline po-mode plantuml-mode paradox origami org-plus-contrib org-bullets ob-typescript ob-tmux ob-sql-mode ob-rust ob-restclient ob-mongo ob-http ob-go ob-elixir ob-browser nord-theme nimbus-theme neotree multi-term move-text markdown-mode magit lorem-ipsum json-mode js2-refactor imgbb hungry-delete highlight-current-line helm-projectile helm-gitignore go-mode git-timemachine git-gutter general eyebrowse expand-region eww-lnum emmet-mode elm-mode elixir-mix editorconfig doom-themes dockerfile-mode dired-ranger deft csv-mode beacon auto-complete all-the-icons alert alchemist aggressive-indent ace-window))))
+    (yasnippet-snippets yarn-mode yaml-mode xref-js2 wttrin windsize which-key webpaste web-mode vue-mode use-package undo-tree try tldr tide terraform-mode switch-window swiper sql-indent smooth-scrolling smartparens smart-mode-line shell-pop sass-mode robe rainbow-mode rainbow-delimiters python-mode prettier-js powerline po-mode plantuml-mode paradox origami org-plus-contrib org-bullets ob-typescript ob-tmux ob-sql-mode ob-rust ob-restclient ob-mongo ob-http ob-go ob-elixir ob-browser nord-theme nimbus-theme neotree multi-term move-text markdown-mode magit lorem-ipsum json-mode js2-refactor imgbb hungry-delete highlight-current-line helm-projectile helm-gitignore go-mode git-timemachine git-gutter general eyebrowse expand-region eww-lnum emmet-mode elm-mode elixir-mix editorconfig doom-themes dockerfile-mode dired-ranger deft csv-mode beacon auto-complete all-the-icons alert alchemist aggressive-indent ace-window))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
