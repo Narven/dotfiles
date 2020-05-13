@@ -108,8 +108,8 @@ timer
 tmuxinator
 terraform
 vagrant
+kubectl
 )
-
 
 source $ZSH/oh-my-zsh.sh
 
@@ -144,7 +144,10 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 source ~/.bash_aliases
 export GOPATH=$HOME/go
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:/usr/local/go/bin:$HOME/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0:$HOME/.gem/ruby/2.5.0:$HOME/npm/bin:/$HOME/npm/bin/bin:/opt/lampp/bin:$HOME/apps/webstorm/WebStorm-182.3911.37/bin:/home/linuxbrew/.linuxbrew/bin:/home/narven/.local/bin/bin:$GOPATH/bin:$PATH"
+
+export WINEPREFIX=~/.wine32
+
+export PATH="$HOME/:/usr/local/go/bin:$HOME/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0:$HOME/.gem/ruby/2.5.0:$HOME/npm/bin:/$HOME/npm/bin/bin:/opt/lampp/bin:$HOME/apps/webstorm/WebStorm-182.3911.37/bin:/home/linuxbrew/.linuxbrew/bin:/home/narven/.local/bin/bin:$GOPATH/bin:/home/narven/.ebcli-virtual-env/executables:$PATH"
 
 # when open any file on vim... opens in NORMAL MODE by default
 #bindkey -v
@@ -156,3 +159,12 @@ tmux start-server
 #export MINICOM="-m -c on"
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+#echo "if [ $commands[kubectl] ]; then source <(kubectl completion zsh); fi" >> ~/.zshrc
+#if [ /usr/bin/kubectl ]; then source <(kubectl completion zsh); fi
+
+#ssh-add ~/.ssh/pedro-dell-buffup.pem
+#ssh-add ~/.ssh/dell.pem
+
+source /home/narven/.config/broot/launcher/bash/br
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
