@@ -10,3 +10,4 @@
 !.emacs.d/
 !.config/nvim/init.vim
 Projects
+!.gitignore_global

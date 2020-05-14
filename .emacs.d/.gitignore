@@ -1,6 +1,0 @@
-*.~*
-!init.el
-!nrv_*
-README.md
-!.gitignore
-!.projectile
