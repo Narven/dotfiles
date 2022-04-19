@@ -22,6 +22,10 @@
 
 (setq backup-directory-alist '(("." . "~/.emacs_saves"))
 
+;; Allow hash to be entered  
+(global-set-key (kbd "M-3") '(lambda () (interactive) (insert "#")))
+
+      
 ;; disable line numbers for some modes
 (dolist (mode '(org-mode-hook
 		term-mode-hook
