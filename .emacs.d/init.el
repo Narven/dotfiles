@@ -1,10 +1,3 @@
-
-;; NOTE: if you want to move everything out of the ~/.emacs.d folder
-;; reliably, set `user-emacs-directory` before load no-littering!
-;; (setq user-emacs-directory "~/.cache/emacs")
-
-;;(use-package no-littering)
-
 (setq inhibit-startup-message t)
 
 ;; set up the visible bell
@@ -14,18 +7,16 @@
 (tool-bar-mode 0) ;; disable toolbar
 (tooltip-mode 0) ;; disable tooltips
 (set-fringe-mode 10) ;; give some breathing rooom
-
-(menu-bar-mode 0)
-
+(menu-bar-mode 0) ;; disable menu
 (column-number-mode)
 (global-display-line-numbers-mode t)
 
-(setq backup-directory-alist '(("." . "~/.emacs_saves"))
+;; NOT WORKING
+;;(setq backup-directory-alist '(("." . "~/.emacs_saves"))
 
 ;; Allow hash to be entered  
 (global-set-key (kbd "M-3") '(lambda () (interactive) (insert "#")))
 
-      
 ;; disable line numbers for some modes
 (dolist (mode '(org-mode-hook
 		term-mode-hook
@@ -35,7 +26,7 @@
 ;; FONT
 (set-face-attribute 'default nil :font "JetBrains Mono" :height 150)
 
-(load-theme 'wombat t)
+;; (load-theme 'wombat t)
 
 ;; PACKAGE MANAGER
 (require 'package)
@@ -54,7 +45,6 @@
 
 (require 'use-package)
 (setq use-package-always-ensure t)
-
 
 (use-package command-log-mode)
 
@@ -125,7 +115,7 @@
   :config
   (setq doom-themes-enable-bold t
 	doom-themes-enable-italic t)
-  (load-theme 'doom-dark+ t))
+  (load-theme 'doom-laserwave t))
 
 (use-package projectile
   :diminish projectile-mode
@@ -140,16 +130,3 @@
 
 (use-package magit)
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   '(magit counsel-projectile projectile doom-themes helpful counsel ivy-rich which-key rainbow-delimiters doom-modeline swiper ivy command-log-mode use-package)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
